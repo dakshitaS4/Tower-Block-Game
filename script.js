@@ -108,10 +108,10 @@ document.addEventListener('keydown', function(event) {
   }
 });
 canvas.addEventListener('touchstart', function(event) {
-  event.preventDefault(); // Prevent the default touch behavior (e.g., scrolling or zooming)
+  event.preventDefault();
   if (mode == 'gameOver' || !isGameStarted) {
     restart();
-    isGameStarted = true; // Set game as started
+    isGameStarted = true;
   } else if (mode == 'bounce') {
     mode = 'fall';
   }
