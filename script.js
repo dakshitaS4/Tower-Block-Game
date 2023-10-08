@@ -1,6 +1,5 @@
-    
-    let isGameStarted = false;
-    let canvas = document.getElementById("myCanvas");
+let isGameStarted = false;
+let canvas = document.getElementById("myCanvas");
 let context = canvas.getContext("2d");
 context.font = 'bold 30px sans-serif';
 let scrollCounter, cameraY, current, mode, xSpeed;
@@ -16,7 +15,7 @@ let debris = {
   x: 0,
   width: 0
 };
- 
+
 function newBox() {
   boxes[current] = {
     x: 0,
@@ -24,12 +23,12 @@ function newBox() {
     width: boxes[current - 1].width
   };
 }
- 
+
 function gameOver() {
   mode = 'gameOver';
   context.fillText('Game over.Press Spacebar to play again!', 50, 50);
 }
- 
+
 function animate() {
   if (mode != 'gameOver') {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -85,7 +84,7 @@ function animate() {
   }
   window.requestAnimationFrame(animate);
 }
- 
+
 function restart() {
   boxes.splice(1, boxes.length - 1);
   mode = 'bounce';
@@ -96,10 +95,10 @@ function restart() {
   newBox();
   debris.y = 0;
 }
- 
-document.addEventListener('keydown', function(event) {
+
+document.addEventListener('keydown', function (event) {
   if (event.key === ' ') {
-    event.preventDefault(); 
+    event.preventDefault();
     if (mode == 'gameOver') {
       restart();
     } else if (mode == 'bounce') {
@@ -107,7 +106,7 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
-canvas.addEventListener('touchstart', function(event) {
+canvas.addEventListener('touchstart', function (event) {
   event.preventDefault();
   if (mode == 'gameOver' || !isGameStarted) {
     restart();
@@ -116,6 +115,6 @@ canvas.addEventListener('touchstart', function(event) {
     mode = 'fall';
   }
 });
- 
+
 restart();
-animate()
+animate();
