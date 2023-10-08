@@ -107,7 +107,15 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
-
+canvas.addEventListener('touchstart', function(event) {
+  event.preventDefault(); // Prevent the default touch behavior (e.g., scrolling or zooming)
+  if (mode == 'gameOver' || !isGameStarted) {
+    restart();
+    isGameStarted = true; // Set game as started
+  } else if (mode == 'bounce') {
+    mode = 'fall';
+  }
+});
  
 restart();
 animate()
