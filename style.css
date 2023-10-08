@@ -1,0 +1,35 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #050830;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+canvas {
+    border: 2px solid #f39c12;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: #babc9e;
+}
+.heading{
+    text-align: center;
+    margin: 0px -527px 661px 266px;
+    color: beige;
+    font-weight: bold;
+}
+
+    #game-over {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #ff0000;
+      text-align: center;
+      display: none;
+    }
