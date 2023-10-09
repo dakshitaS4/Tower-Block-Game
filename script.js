@@ -1,7 +1,7 @@
 let isGameStarted = false;
 let canvas = document.getElementById("myCanvas");
 let context = canvas.getContext("2d");
-context.font = 'bold 30px sans-serif';
+context.font = 'bold 30px merienda';
 let scrollCounter, cameraY, current, mode, xSpeed;
 let ySpeed = 5;
 let height = 50;
@@ -38,7 +38,7 @@ function animate() {
       context.fillStyle = 'rgb(' + n * 16 + ',' + n * 16 + ',' + n * 16 + ')';
       context.fillRect(box.x, 600 - box.y + cameraY, box.width, height);
     }
-    context.fillStyle = 'red';
+    context.fillStyle = 'rgb(112, 5, 5)';
     context.fillRect(debris.x, 600 - debris.y + cameraY, debris.width, height);
     if (mode == 'bounce') {
       boxes[current].x = boxes[current].x + xSpeed;
