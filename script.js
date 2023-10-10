@@ -59,10 +59,13 @@ function animate() {
           y: boxes[current].y,
           width: difference
         };
+        //right debris cut off
         if (boxes[current].x > boxes[current - 1].x) {
           boxes[current].width = boxes[current].width - difference;
           debris.x = boxes[current].x + boxes[current].width;
-        } else {
+        } 
+        //left debris cut off
+        else {
           debris.x = boxes[current].x - difference;
           boxes[current].width = boxes[current].width + difference;
           boxes[current].x = boxes[current - 1].x;
@@ -77,6 +80,7 @@ function animate() {
       }
     }
     debris.y = debris.y - ySpeed;
+    //stack going down
     if (scrollCounter) {
       cameraY++;
       scrollCounter--;
@@ -117,4 +121,4 @@ canvas.addEventListener('touchstart', function (event) {
 });
 
 restart();
-animate();
+animate()
